@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Pendaftaran Mahasiswa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Form Pendaftaran Mahasiswa</h1>
+
+    <form id="registrationForm" novalidate>
+      <fieldset>
+        <legend>Data Pribadi</legend>
+
+        <label for="fullname">Nama Lengkap <span class="req">*</span></label>
+        <input id="fullname" name="fullname" type="text" placeholder="Contoh: Budi Santoso" required />
+
+        <label for="nim">NIM <span class="req">*</span></label>
+        <input id="nim" name="nim" type="text" inputmode="numeric" placeholder="Contoh: 21012345" required />
+
+        <label for="email">Email <span class="req">*</span></label>
+        <input id="email" name="email" type="email" placeholder="contoh@kampus.ac.id" required />
+
+        <label for="phone">No. Telepon</label>
+        <input id="phone" name="phone" type="tel" placeholder="+62 812-3456-7890" />
+
+        <label for="birthdate">Tanggal Lahir</label>
+        <input id="birthdate" name="birthdate" type="date" />
+
+        <label>Jenis Kelamin</label>
+        <div class="radio-row">
+          <label><input type="radio" name="gender" value="Laki-laki" checked /> Laki-laki</label>
+          <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
+          <label><input type="radio" name="gender" value="Lainnya" /> Lainnya</label>
+        </div>
+
+        <label for="address">Alamat</label>
+        <textarea id="address" name="address" rows="3" placeholder="Alamat lengkap"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Data Akademik & Akses</legend>
+
+        <label for="faculty">Fakultas <span class="req">*</span></label>
+        <select id="faculty" name="faculty" required>
+          <option value="">-- Pilih Fakultas --</option>
+          <option>Fakultas Teknik</option>
+          <option>Fakultas Ilmu Komputer</option>
+          <option>Fakultas Ekonomi & Bisnis</option>
+          <option>Fakultas Keguruan & Ilmu Pendidikan</option>
+          <option>Fakultas Hukum</option>
+          <option>Fakultas Kedokteran</option>
+        </select>
+
+        <label for="major">Program Studi / Jurusan</label>
+        <input id="major" name="major" type="text" placeholder="Contoh: Teknik Informatika" />
+
+        <label for="password">Password <span class="req">*</span></label>
+        <input id="password" name="password" type="password" minlength="6" placeholder="Minimal 6 karakter" required />
+
+        <label for="confirmPassword">Konfirmasi Password <span class="req">*</span></label>
+        <input id="confirmPassword" name="confirmPassword" type="password" minlength="6" placeholder="Ketik ulang password" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Upload</legend>
+
+        <label for="photo">Foto (opsional)</label>
+        <input id="photo" name="photo" type="file" accept="image/*" />
+
+        <div id="photoPreview" class="photo-preview" aria-hidden="true">
+          <span>Tidak ada foto</span>
+        </div>
+      </fieldset>
+
+      <label class="checkbox">
+        <input id="terms" name="terms" type="checkbox" required />
+        Saya menyatakan data yang saya isi benar dan saya setuju dengan syarat & ketentuan. <span class="req">*</span>
+      </label>
+
+      <div class="actions">
+        <button type="submit" id="submitBtn">Daftar</button>
+        <button type="reset" id="resetBtn" class="secondary">Reset</button>
+      </div>
+    </form>
+
+    <section id="result" class="result" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
